@@ -10,14 +10,12 @@ contract FaucetTest is Test {
     Faucet public faucet;
 
     address public SOMEONE = makeAddr("someone");
-    address public ALICE = makeAddr("alice");
     uint256 public constant STARTING_BALANCE = 10 ether;
 
     function setUp() public {
         deployer = new DeployFaucet();
         faucet = deployer.run();
         vm.deal(SOMEONE, STARTING_BALANCE);
-        vm.deal(ALICE, STARTING_BALANCE);
     }
 
     function testSendEtherToContractWithNoEther() public {
