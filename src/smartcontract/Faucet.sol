@@ -19,11 +19,11 @@ contract Faucet {
     }
 
     // Send 1 ether to msg.sender
-    function giveMe1Ether() public payable {
-        if (address(this).balance <= 1 ether) {
+    function giveMeEther() public payable {
+        if (address(this).balance <= 1e17) {
             revert Faucet__FaucetHasBeenDepleted();
         }
-        payable(msg.sender).transfer(1 ether);
+        payable(msg.sender).transfer(1e17);
     }
 
     receive() external payable {}

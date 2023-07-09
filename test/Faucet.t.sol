@@ -3,7 +3,7 @@ pragma solidity ^0.8.18;
 
 import {Test, console} from "forge-std/Test.sol";
 import {DeployFaucet} from "../script/DeployFaucet.s.sol";
-import {Faucet} from "../src/Faucet.sol";
+import {Faucet} from "../src/smartcontract/Faucet.sol";
 
 contract FaucetTest is Test {
     DeployFaucet public deployer;
@@ -41,16 +41,16 @@ contract FaucetTest is Test {
 
     function testUserRequestEtherFromFaucet() public userFunded {
         vm.prank(SOMEONE);
-        faucet.giveMe1Ether();
+        faucet.giveMeEther();
         console.log(address(faucet).balance);
-        assertEq(faucet.getContractBalance(), 1 ether);
+        assertEq(faucet.getContractBalance(), 19e17);
     }
 
     function testFaucetHasNoMoreEther() public {
         vm.prank(SOMEONE);
-        faucet.sendEtherToContract{value: 1 ether}();
+        faucet.sendEtherToContract{value: 1e17}();
         vm.prank(SOMEONE);
         vm.expectRevert(Faucet.Faucet__FaucetHasBeenDepleted.selector);
-        faucet.giveMe1Ether();
+        faucet.giveMeEther();
     }
 }
