@@ -1,5 +1,5 @@
-# Faucet Smart Contract
-This is a simple Faucet Smart Contract
+# Faucet Smart Contract Dapps
+This is a simple Faucet Smart Contract with simple front end design and connected with express java script
 
 ## What's Inside
 1. Wallet can send ether to this smart contract.
