@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Sepolia Faucet</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.3/web3.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <nav>
+        <h1 class="title">Sepolia Ethereum Faucet</h1>
+        <div class="nav-kanan">
+            <p id="contractArea"></p>            
+            <p id="accountArea"></p>
+            <button onclick="connectMetamask(); connectContract();">CONNECT WALLET</button>
+        </div>
+    </nav>
+    <section class="faucet">
+        <div class="faucet-wrapper">
+            <div class="img"></div>
+            <p id="contractBalance" onclick="getContractBalance()"><i>reveal faucet balance</i></p>
+            <div class="content">
+                <form id="faucetForm">
+                    <a id="giveMeEther" onclick="giveMeEther()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Get 0.1 Ether
+                    </a>
+                </form>
+                <div class="sendEtherToContract">
+                    <p class="lead">Faucet can be depleted. Please consider donate unused ether to faucet</p>
+                    <input type="number" id="donate-input" name="address" placeholder="enter eth value">
+                    <button class="animated" type="button" onclick="sendEtherToContract()">Send Ether</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
