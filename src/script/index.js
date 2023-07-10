@@ -58,7 +58,7 @@ const connectContract = async () => {
             "type": "function"
         }
     ];
-    const Address = "0xb6a26b26ECC57d8d29292aC187dA314cBb3EB662";
+    const Address = "0x4e78D658A75869dB645C172613Bede9a0c747585";
     window.web3 = await new Web3(window.ethereum);
     window.contract = await new window.web3.eth.Contract(ABI, Address);
     document.getElementById("contractArea").innerHTML = "Connected";
