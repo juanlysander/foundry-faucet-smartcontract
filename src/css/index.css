@@ -277,6 +277,7 @@ a span:nth-child(4) {
 }
 .lead {
   text-align: center;
+  color: #b5b6c4;
 }
 #donate-input {
   width: 50%;
